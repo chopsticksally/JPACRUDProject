@@ -382,3 +382,6 @@ Caused by: org.gradle.process.internal.ExecException: Process 'command '/Library
 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeAction(ExecuteActionsTaskExecuter.java:110)
 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:92)
 	... 29 more
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2018-04-19 16:54:45.238
+!MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
