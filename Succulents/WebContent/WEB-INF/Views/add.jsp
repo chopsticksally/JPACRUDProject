@@ -3,24 +3,22 @@
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
     
     
-    
-    
-    
-  
-
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- <link rel="stylesheet" href="css/add1.css">
+ <link rel="stylesheet" href="css/add.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Have a Succulent you would like to add to the library?</title>
 </head>
-<body>
-
+<body background="images/woodenslats.jpg" >
+<div class = "container">
+<div class= "row justify-content-start">
+<div class= "col-sm-2"></div>
+<div class = "col-sm-8" >
 	<form action="add.do" method="POST">
 		<label for="commonName">Common Name</label>
 		<input type="text" value="${succulent.commonName}" min="1" max="30" name="commonName"> <br>
@@ -39,15 +37,15 @@
 <br>
 		<label for="coldHardiness">Cold Hardiness</label>
 			<select name="coldHardiness">
-			<option value="1">Yes</option>
-			<option value="2">No</option>
+			<option value="Yes">Yes</option>
+			<option value="No">No</option>
 			</select> <br>
 			
 		<label for="sunExposure">Sun Exposure</label>
 			<select name="sunExposure">
-			<option value="1">Full</option>
-			<option value="2">Partial</option>
-			<option value="3">Full/Partial</option>
+			<option value="Full">Full</option>
+			<option value="Partial">Partial</option>
+			<option value="Full/Partial">Full/Partial</option>
 			</select> <br>
 			
 		<%-- <label for="careInstructionsUrl">Enter a URL to this succulent's Care Instructions</label>
@@ -71,5 +69,8 @@
 
 <a href="home.do">Return home</a>
 	</form>
+	</div>
+	</div>
+	</div>
 </body>
 </html>

@@ -11,12 +11,28 @@ nav {
 .navbar-brand {
 	font-family: cursive;
 	font-size: 20pt;
-	
 }
+
 h1 {
 	font-size: 50pt;
 }
 
 h3 {
+	font-size: 35pt;
+}
+
+.linknames {
 	font-size: 20pt;
 }
+
+footer{
+	font-size:35pt;
+}
+h2 {
+	font-size:35pt;
+}
+
+.container-fluid{
+	background-image: url("images/waterwallpaper.jpeg");
+}
+	

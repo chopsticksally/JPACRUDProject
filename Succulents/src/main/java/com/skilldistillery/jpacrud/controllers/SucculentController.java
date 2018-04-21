@@ -50,6 +50,7 @@ public class SucculentController {
 		ModelAndView mv = new ModelAndView();
 		Succulent s = dao.addASucculent(succulent);
 		mv.addObject("succulent", s);
+		//mv.addObject("images/pink2.jpeg",dao.setImgUrl();
 		mv.setViewName("redirect:home.do");
 		return mv;
 
@@ -63,10 +64,12 @@ public class SucculentController {
 		return mv;
 	}
 
-	@RequestMapping(path = "delete.do", method = RequestMethod.GET)
+	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
 	public ModelAndView deleteSucculent(@RequestParam(name = "id") Integer succulentId) {
 		ModelAndView mv = new ModelAndView();
 		dao.deleteSucculent(succulentId);
+		mv.addObject("message", "Take a look around");
+		mv.addObject("list", dao.getAllSucculents());
 		mv.setViewName("home");
 		return mv;
 	}

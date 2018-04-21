@@ -1,6 +1,16 @@
+@charset "UTF-8";
 
-body  {
+  .col-sm-8  {
     font-family: cursive;
-    color: #9370DB;
+    color: black;
     font-size: 24pt;
+    font-weight: bold;
+    background-color: white;
+    text-align: center;
+   
 }
+
+.container{
+	
+}
+    

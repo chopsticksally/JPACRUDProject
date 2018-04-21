@@ -44,10 +44,10 @@
       <ul class="nav navbar-nav navbar-right">
        <!--  <li><a href="#">Look up by Common name</a></li> -->
         <li>Look up by ID#<form action="succulent.do" method="GET">
-		 <input type="text" name="id" size="4" />
+		 <input type="text" name="id" size="4" />   
 			<input type="submit" value="submit" />
 			</form></li>
-        
+     
        
         <li><a href="succulents.do">Display all</a></li>
       </ul>
@@ -66,14 +66,14 @@
 		<div class="row">
 		<div class="col-sm-4">
 
-		<p><a href="succulent.do?id=${plant.id}">${plant.commonName}</a></p>
+		<p class= "linknames"><a href="succulent.do?id=${plant.id}">${plant.commonName} </a></p>
 		<img src="${plant.imgUrl}" width="275" height="250" alt="${plant.commonName}">
 		</div>
 	</c:if>
 	<c:if test="${count % 3 != 0}">
 		<div class="col-sm-4">
 		
-		<p><a href="succulent.do?id=${plant.id}">${plant.commonName}</a></p>
+		<p class= "linknames"><a href="succulent.do?id=${plant.id}">${plant.commonName}</a></p>
 		<img src="${plant.imgUrl}" width="275" height="250" alt="${plant.commonName}">
 		</div>
 	</c:if>
@@ -82,41 +82,18 @@
 </div>
 
 
-<style>
-.bg-4 { 
-    background-color: #2f2f2f;
-    color: #ffffff;
-}
-</style>
+
+
 
 <footer class="container-fluid bg-4 text-center">
   <p>Thanks for visiting!! </p> 
 </footer>
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<style>
+.bg-4 { 
+       background-color: black; 
+        color: #ffffff;
+    }
+</style>
 
 
 

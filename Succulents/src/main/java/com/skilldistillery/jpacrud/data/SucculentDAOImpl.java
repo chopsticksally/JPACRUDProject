@@ -52,6 +52,7 @@ public class SucculentDAOImpl implements SucculentDAO {
 	@Override
 	public Succulent addASucculent(Succulent succulent) {
 		//em.getTransaction().begin();
+		succulent.setImgUrl("images/default.jpeg");
 		em.persist(succulent);
 		em.flush();
 		//em.getTransaction().commit();
