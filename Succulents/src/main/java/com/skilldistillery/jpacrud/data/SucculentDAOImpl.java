@@ -64,6 +64,13 @@ public class SucculentDAOImpl implements SucculentDAO {
 		Succulent managedSucculent = em.find(Succulent.class, id);
 		managedSucculent.setCommonName(succulent.getCommonName());
 	    managedSucculent.setScientificName(succulent.getScientificName());
+	    managedSucculent.setOrigin(succulent.getOrigin());
+	    managedSucculent.setHeight(succulent.getHeight());
+	    managedSucculent.setDiameter(succulent.getDiameter());
+	    managedSucculent.setColdHardiness(succulent.getColdHardiness());
+	    managedSucculent.setCareInstructionsUrl(succulent.getCareInstructionsUrl());
+	    managedSucculent.setImgUrl(succulent.getImgUrl());
+	    
 	   // em.getTransaction().commit();
 		return managedSucculent;
 	}

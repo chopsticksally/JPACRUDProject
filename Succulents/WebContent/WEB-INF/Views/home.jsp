@@ -35,13 +35,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#">Have something to add?</a>
+      <a class="navbar-brand" href="add.do">Have something to add?</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Look up by Common name</a></li>
-        <li><a href="#">Look up by Id#</a></li>
-        <li><a href="#">Display all</a></li>
+       <!--  <li><a href="#">Look up by Common name</a></li> -->
+        <li>Look up by ID#<form action="succulent.do" method="GET">
+		 <input type="text" name="id" size="4" />
+			<input type="submit" value="submit" />
+			</form></li>
+        
+       
+        <li><a href="succulents.do">Display all</a></li>
       </ul>
     </div>
   </div>
@@ -50,81 +55,30 @@
 
 <div class="container-fluid bg-3 text-center"> 
   <h3>Succulents</h3>
-  
-<c:forEach items="${list}" var="plant">
+<c:set var="count" value="0" scope="page"/>  
 <div class="row">
-<div class="col-sm-4">
-      <p><a href="succulent.do?id=${plant.id}">${plant.commonName}</a></p>
-      <img src="${plant.imgUrl}" width="275" height="250" alt="${plant.commonName}">
-    </div>
-</div>
+<c:forEach items="${list}" var="plant" >
+	<c:if test="${count % 3 == 0}">
+		</div>
+		<div class="row">
+		<div class="col-sm-4">
+
+		<p><a href="succulent.do?id=${plant.id}">${plant.commonName}</a></p>
+		<img src="${plant.imgUrl}" width="275" height="250" alt="${plant.commonName}">
+		</div>
+	</c:if>
+	<c:if test="${count % 3 != 0}">
+		<div class="col-sm-4">
+		
+		<p><a href="succulent.do?id=${plant.id}">${plant.commonName}</a></p>
+		<img src="${plant.imgUrl}" width="275" height="250" alt="${plant.commonName}">
+		</div>
+	</c:if>
+	<c:set var="count" value="${count + 1}" scope="page"/>
 </c:forEach>
-
-
-
-
-
- <!--  <div class="row">
-    <div class="col-sm-4">
-      <p>Crinkle Leaf Plant</p>
-      <img src="images/crinkleleafplant.jpg" width="275" height="250" alt="Crinkle Leaf Plant">
-    </div>
-    <div class="col-sm-4">
-      <p>Fizzle Sizzle</p>
-      <img src="images/fizzlesizzle.jpg" width="275" height="250" alt="fizzlesizzle">
-    </div>
-    <div class="col-sm-4"> 
-      <p>Panda Ear</p>
-      <img src="images/pandaear.jpg" width="275" height="250" alt="pandaear succulent">
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-sm-4">
-      <a href="Zebra Plant"></a>
-      <img src="images/zebraplant.jpg" width="275" height="250" alt="zebraplant">
-    </div>
-    <div class="col-sm-4">
-      <p>Split Rock</p>
-      <img src="images/splitrock.jpg" width="275" height="250" alt="splitrock succulent">
-    </div>
-    <div class="col-sm-4"> 
-      <p>Rose Succulent</p>
-      <img src="images/rosesucculent.jpg" width="275" height="250" alt="rosesucculent">
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-sm-4">
-      <p>String of Pearls</p>
-      <img src="images/stringofpearls.jpg" width="275" height="250" alt="stringofpearls succulent">
-    </div>
-    <div class="col-sm-4">
-      <p>Hens and Chicks</p>
-      <img src="images/hensandchicks.jpg" width="275" height="250" alt="hensandchicks succulent">
-    </div>
-    <div class="col-sm-4"> 
-      <p>Echeveria</p>
-      <img src="images/Echeveria.jpg" width="275" height="250" alt="Echeveria succulent">
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-sm-4">
-      <p>Baby Toes</p>
-      <img src="images/babytoes.jpg" width="275" height="250" alt="babytoes succulent">
-    </div>
-    <div class="col-sm-4">
-      <p>Jelly Bean</p>
-      <img src="images/jellybean.jpg" width="275" height="250" alt="jellybean succulent">
-    </div>
-    <div class="col-sm-4"> 
-      <p>Bunny Ears</p>
-      <img src="images/bunnyears.jpg" width="275" height="250" alt="bunnyears succulent">
-    </div>
-  </div>
 </div>
- -->
+
+
 <style>
 .bg-4 { 
     background-color: #2f2f2f;

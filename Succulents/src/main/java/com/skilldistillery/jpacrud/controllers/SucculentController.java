@@ -41,7 +41,7 @@ public class SucculentController {
 		ModelAndView mv = new ModelAndView();
 		List<Succulent> succulents = dao.getAllSucculents();
 		mv.addObject("succulents", succulents);
-		mv.setViewName("displayInfo"); // should i use a different view for this???
+		mv.setViewName("displayAll"); 
 		return mv;
 	}
 
@@ -71,11 +71,12 @@ public class SucculentController {
 		return mv;
 	}
 
-	@RequestMapping(path = "update.do", method = RequestMethod.GET)
+	@RequestMapping(path = "update.do", method = RequestMethod.POST)
 	public ModelAndView editASucculent(@RequestParam(name = "id") Integer succulentId, Succulent succulent) {
 		ModelAndView mv = new ModelAndView();
 		Succulent s = dao.editASucculent(succulentId, succulent);
 		mv.addObject("succulent", s);
+		System.out.println(s);
 		mv.setViewName("displayInfo");
 		return mv;
 	}
