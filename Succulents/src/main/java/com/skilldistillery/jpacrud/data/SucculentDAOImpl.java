@@ -68,8 +68,9 @@ public class SucculentDAOImpl implements SucculentDAO {
 	    managedSucculent.setHeight(succulent.getHeight());
 	    managedSucculent.setDiameter(succulent.getDiameter());
 	    managedSucculent.setColdHardiness(succulent.getColdHardiness());
-	    managedSucculent.setCareInstructionsUrl(succulent.getCareInstructionsUrl());
-	    managedSucculent.setImgUrl(succulent.getImgUrl());
+	    
+	    em.persist(managedSucculent);
+	    em.flush();
 	    
 	   // em.getTransaction().commit();
 		return managedSucculent;

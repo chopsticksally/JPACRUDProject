@@ -85,13 +85,13 @@
 			<option value="Full/Partial">Full/Partial</option>
 			</select> <br>
 			
-		<label for="careInstructionsUrl">Enter a URL to this succulent's Care Instructions</label>
+		<%-- <label for="careInstructionsUrl">Enter a URL to this succulent's Care Instructions</label>
 		<input type="text" value="${succulent.careInstructionsUrl}"  min="1" max="45" name="careInstructions"> <br>
 		 <br>
 		
 		<label for="imgUrl">Enter a URL to an image of this succulent</label>
 		<input type="text" value="${succulent.imgUrl}" min="1" max="45" name="img"> <br>
-		 <br>
+		 <br> --%>
 		
 		
 		<input type="submit" value="Submit">

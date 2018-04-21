@@ -1,0 +1,22 @@
+@charset "UTF-8";
+body  {
+    font-family: cursive;
+    color: black;
+}
+nav {
+	font-family: cursive;
+	font-size: 20pt;
+	background-color: #DCDCDC;
+}
+.navbar-brand {
+	font-family: cursive;
+	font-size: 20pt;
+	
+}
+h1 {
+	font-size: 50pt;
+}
+
+h3 {
+	font-size: 20pt;
+}
