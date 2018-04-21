@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -38,9 +39,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Add a Succulent</a></li>
-        <li><a href="#">Edit a Succulent</a></li>
-        <li><a href="#">Look up by common name</a></li>
+        <li><a href="#">Look up by Common name</a></li>
+        <li><a href="#">Look up by Id#</a></li>
+        <li><a href="#">Display all</a></li>
       </ul>
     </div>
   </div>
@@ -49,67 +50,81 @@
 
 <div class="container-fluid bg-3 text-center"> 
   <h3>Succulents</h3>
-  <div class="row">
+  
+<c:forEach items="${list}" var="plant">
+<div class="row">
+<div class="col-sm-4">
+      <p><a href="succulent.do?id=${plant.id}">${plant.commonName}</a></p>
+      <img src="${plant.imgUrl}" width="275" height="250" alt="${plant.commonName}">
+    </div>
+</div>
+</c:forEach>
+
+
+
+
+
+ <!--  <div class="row">
     <div class="col-sm-4">
       <p>Crinkle Leaf Plant</p>
-      <img src="images/crinkleleafplant.jpg" alt="Image">
+      <img src="images/crinkleleafplant.jpg" width="275" height="250" alt="Crinkle Leaf Plant">
     </div>
     <div class="col-sm-4">
       <p>Fizzle Sizzle</p>
-      <img src="images/fizzlesizzle.jpg" alt="Image">
+      <img src="images/fizzlesizzle.jpg" width="275" height="250" alt="fizzlesizzle">
     </div>
     <div class="col-sm-4"> 
       <p>Panda Ear</p>
-      <img src="images/pandaear.jpg" alt="Image">
+      <img src="images/pandaear.jpg" width="275" height="250" alt="pandaear succulent">
     </div>
   </div>
   
   <div class="row">
     <div class="col-sm-4">
-      <p>Zebra Plant</p>
-      <img src="images/zebraplant.jpg" alt="Image">
+      <a href="Zebra Plant"></a>
+      <img src="images/zebraplant.jpg" width="275" height="250" alt="zebraplant">
     </div>
     <div class="col-sm-4">
       <p>Split Rock</p>
-      <img src="images/splitrock.jpg" alt="Image">
+      <img src="images/splitrock.jpg" width="275" height="250" alt="splitrock succulent">
     </div>
     <div class="col-sm-4"> 
       <p>Rose Succulent</p>
-      <img src="images/rosesucculent.jpg" alt="Image">
+      <img src="images/rosesucculent.jpg" width="275" height="250" alt="rosesucculent">
     </div>
   </div>
   
   <div class="row">
     <div class="col-sm-4">
       <p>String of Pearls</p>
-      <img src="images/stringofpearls.jpg" alt="Image">
+      <img src="images/stringofpearls.jpg" width="275" height="250" alt="stringofpearls succulent">
     </div>
     <div class="col-sm-4">
       <p>Hens and Chicks</p>
-      <img src="images/hensandchicks.jpg" alt="Image">
+      <img src="images/hensandchicks.jpg" width="275" height="250" alt="hensandchicks succulent">
     </div>
     <div class="col-sm-4"> 
       <p>Echeveria</p>
-      <img src="images/Echeveria.jpg" alt="Image">
+      <img src="images/Echeveria.jpg" width="275" height="250" alt="Echeveria succulent">
     </div>
   </div>
   
   <div class="row">
     <div class="col-sm-4">
       <p>Baby Toes</p>
-      <img src="images/babytoes.jpg" alt="Image">
+      <img src="images/babytoes.jpg" width="275" height="250" alt="babytoes succulent">
     </div>
     <div class="col-sm-4">
       <p>Jelly Bean</p>
-      <img src="images/jellybean.jpg" alt="Image">
+      <img src="images/jellybean.jpg" width="275" height="250" alt="jellybean succulent">
     </div>
     <div class="col-sm-4"> 
       <p>Bunny Ears</p>
-      <img src="images/bunnyears.jpg" alt="Image">
+      <img src="images/bunnyears.jpg" width="275" height="250" alt="bunnyears succulent">
     </div>
   </div>
 </div>
-
+ -->
 <style>
 .bg-4 { 
     background-color: #2f2f2f;

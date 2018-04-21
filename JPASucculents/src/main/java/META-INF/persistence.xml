@@ -9,12 +9,13 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
 	
-    <class>com.skilldistillery.jpasucculents.entities.FILLTHISOUT!!!!!!!!!</class>
+    <class>com.skilldistillery.jpasucculents.entities.Succulent</class>
+    <class>com.skilldistillery.jpasucculents.entities.Description</class>
     <properties>
       <property name="javax.persistence.jdbc.url"
-        value="jdbc:mysql://localhost:3306/succulentdba" />
+        value="jdbc:mysql://localhost:3306/succulentsdb" />
       <property name="javax.persistence.jdbc.user"
-        value="succulentuser@localhost"/>
+        value="succulentuser"/>
       <property name="javax.persistence.jdbc.password"
         value="succulentuser" />
       <property name="javax.persistence.jdbc.driver"

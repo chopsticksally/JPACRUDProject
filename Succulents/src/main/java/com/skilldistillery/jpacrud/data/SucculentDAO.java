@@ -8,14 +8,14 @@ public interface SucculentDAO {
 	
 	Succulent succulent = new Succulent();
 	
-	Succulent retrieveById(int id);
+	Succulent getSucculentById(int id);
 	
-	List<Succulent>retrieveAll();
-	
-	boolean delete(Succulent succulent);
+	boolean deleteSucculent(int id);
 	
 	Succulent addASucculent(Succulent succulent);
 	
-	Succulent editASucculent(Succulent succulent);
+	Succulent editASucculent(int id, Succulent succulent);
+
+	List<Succulent> getAllSucculents();
 
 }

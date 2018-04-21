@@ -18,23 +18,54 @@ public class SucculentDAOImpl implements SucculentDAO {
 	private EntityManager em;
 	
 	
-	@Override
-	public Succulent retrieveById(int id) {
+	@Override//show
+	public Succulent getSucculentById(int id) {
 		Succulent succulent = em.find(Succulent.class,id);
 		return succulent;
 	}
 
-	@Override
-	public List<Succulent> retrieveAll() {
-		// TODO Auto-generated method stub
-		return null;
+	@Override//index
+	public List<Succulent> getAllSucculents() {
+		String query = "select s from Succulent s";
+		List<Succulent> succulents = em.createQuery(query,Succulent.class).getResultList();
+		return succulents;
 	}
 
 
 	@Override
-	public boolean delete(Succulent succulent) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteSucculent(int id) {
+		
+			Succulent s = em.find(Succulent.class, id);
+			//em.getTransaction().begin();
+			try {
+				em.remove(s);
+				//em.getTransaction().commit();
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			}
+			s.getCommonName();
+			return true;
+		}
+
+	
+
+	@Override
+	public Succulent addASucculent(Succulent succulent) {
+		//em.getTransaction().begin();
+		em.persist(succulent);
+		em.flush();
+		//em.getTransaction().commit();
+		return succulent;
+	}
+
+	@Override
+	public Succulent editASucculent(int id, Succulent succulent) {
+		//em.getTransaction().begin();
+		Succulent managedSucculent = em.find(Succulent.class, id);
+		managedSucculent.setCommonName(succulent.getCommonName());
+	    managedSucculent.setScientificName(succulent.getScientificName());
+	   // em.getTransaction().commit();
+		return managedSucculent;
 	}
 	
 
