@@ -50,7 +50,6 @@ public class SucculentController {
 		ModelAndView mv = new ModelAndView();
 		Succulent s = dao.addASucculent(succulent);
 		mv.addObject("succulent", s);
-		//mv.addObject("images/pink2.jpeg",dao.setImgUrl();
 		mv.setViewName("redirect:home.do");
 		return mv;
 

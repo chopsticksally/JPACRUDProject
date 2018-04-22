@@ -31,6 +31,10 @@ public class Succulent {
 		
 	}
 
+	public Succulent(String commonName) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return id;
 	}
