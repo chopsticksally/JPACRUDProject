@@ -74,8 +74,8 @@
 
 		<label for="coldHardiness">Cold Hardiness</label>
 			<select name="coldHardiness">
-			<option value="1">Yes</option>
-			<option value="2">No</option>
+			<option value="Yes">Yes</option>
+			<option value="No">No</option>
 			</select> <br>
 			
 		<label for="sunExposure">Sun Exposure</label>
